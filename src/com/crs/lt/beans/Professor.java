@@ -1,5 +1,31 @@
 package com.crs.lt.beans;
 
-public class Professor {
+import java.util.Date;
+
+public class Professor extends User {
+	
+private String department;
+private String designtion;
+private Date dateofJoinig;
+
+public String getDepartment() {
+	return department;
+}
+public void setDepartment(String department) {
+	this.department = department;
+}
+public String getDesigntion() {
+	return designtion;
+}
+public void setDesigntion(String designtion) {
+	this.designtion = designtion;
+}
+public Date getDateofJoinig() {
+	return dateofJoinig;
+}
+public void setDateofJoinig(Date dateofJoinig) {
+	this.dateofJoinig = dateofJoinig;
+}
+
 
 }
