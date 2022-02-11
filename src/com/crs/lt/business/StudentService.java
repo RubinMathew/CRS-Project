@@ -23,6 +23,46 @@ public class StudentService implements StudentServiceInterface{
 		// TODO Auto-generated method stub
 		
 	}
+
+	public void registerCourse() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void addCourse() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void dropcourse() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void dropCourse() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void viewCourses() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void viewRegisteredCourses() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void viewGradeCard() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void payment() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }

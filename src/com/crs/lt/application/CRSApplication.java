@@ -2,6 +2,7 @@ package com.crs.lt.application;
 
 import java.util.Scanner;
 
+
 public class CRSApplication {
 
 	/**
