@@ -18,7 +18,7 @@ public class CRSApplication {
 		System.out.println("4.Exit");
 		Scanner sc=new Scanner(System.in);
 		int op=sc.nextInt();
-		/* goto CRSAdmin,CRSStudent,CRSProfessor Menu from here*/
+		/* goto CRSAdmin,CRSStudent,CRSProfessor Menu from here */
 		
 		switch(op)
 		{
