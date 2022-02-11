@@ -15,6 +15,7 @@ public class GradeCard {
 	private int semester;
 	private float cpi;
 	private List<RegisteredCourse> registeredCourses;
+
 	
 
 	public int getStudentId() {
@@ -22,6 +23,7 @@ public class GradeCard {
 	}
 	public void setStudentId(int studentId) {
 		this.studentId = studentId;
+	
 	}
 	public int getSemester() {
 		return semester;
