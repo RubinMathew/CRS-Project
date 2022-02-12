@@ -24,6 +24,7 @@ public class CRSApplication {
 		{
 		case 1:
 			//goto student service
+			
 			break;
 		case 2:
 			//goto admin service
