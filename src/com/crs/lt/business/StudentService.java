@@ -166,7 +166,10 @@ public class StudentService implements StudentServiceInterface {
 
 	public void payment() {
 		// TODO Auto-generated method stub
+		// do payment activities here
+		
 
 	}
+
 
 }

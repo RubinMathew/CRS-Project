@@ -9,7 +9,7 @@ public interface StudentServiceInterface {
 	public void registerCourse(int studentId); // completed
 	public void addCourse(String courseCode,int studentID); // completed
 	public void dropcourse(int studentid,String courseCode,int semesterID); //completed
-	public void viewCourses(); // viewing of all courses need to be completed
+	public void viewCourses(); // completed
 	public void viewRegisteredCourses(int studentId); //completed
 	public void viewGradeCard(int studentId,int semesterId); //completed
 	public void payment();
