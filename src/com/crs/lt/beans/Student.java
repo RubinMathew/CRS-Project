@@ -5,6 +5,7 @@ public class Student extends User {
 private int studentId;
 private String branch;
 private int batch;
+private boolean isApproved=false;
 
 public int getStudentId() {
 	return studentId;

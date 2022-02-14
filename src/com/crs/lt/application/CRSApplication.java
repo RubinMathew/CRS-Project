@@ -23,7 +23,7 @@ public class CRSApplication {
 		switch(op)
 		{
 		case 1:
-			//goto student service
+				//goto student service
 			
 			break;
 		case 2:
