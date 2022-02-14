@@ -13,6 +13,10 @@ public class Admin extends User {
 	public void setDateOfJoining(Date dateOfJoining) {
 		this.dateOfJoining = dateOfJoining;
 	}
+	public void addCourses()
+	{
+		
+	}
 
 
 	
