@@ -36,25 +36,26 @@ public class StudentService implements StudentServiceInterface {
 	
 		Student student=new Student();
 		
-		System.out.println("Enter the email id :- ");
+		System.out.println("Enter the email id :- \n");
 	
 		
 		
 		/*student id will be auto increment */ 
 		student.setEmailid(sc.next());
 	
-		System.out.println("Enter a password :- ");
+		System.out.println("Enter a password :- \n");
 		student.setPassword(sc.next());
-		System.out.println("Enter student name :- ");
+		System.out.println("Enter student name :- \n");
 		student.setName(sc.next());
 		student.setRole(1); /*default role for student */
-		System.out.println("Enter the branch (EE/CS/EEE/MECH/CYBERSEC) :- ");
+		System.out.println("Enter the branch (EE/CS/EEE/MECH/CYBERSEC) :- \n");
 		student.setBranch(sc.next());
-		System.out.println("Enter the semester/batch number :- ");
+		System.out.println("Enter the semester/batch number :- \n");
 		student.setBatch(sc.nextInt());
 		student.setApproved(false); /*need admins approvals */
-		System.out.println(new StudentDAOOperation().registerStudent(student));
 		
+		System.out.println(new StudentDAOOperation().registerStudent(student));
+		sc.next();
 	
 		
 

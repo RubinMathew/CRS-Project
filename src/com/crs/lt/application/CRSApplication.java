@@ -17,9 +17,9 @@ public class CRSApplication {
 		do{
 		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++");
 		System.out.println("\nWelcome to CRS Application");
-		System.out.println("1.CRS-Student-Application");
-		System.out.println("2.Register Student");
-		System.out.println("3.Log in");
+		System.out.println("1.Register Student");
+		System.out.println("2.Log in");
+		System.out.println("3.View Courses");
 		System.out.println("4.Exit");
 		System.out.println("Enter your option:- ");
 		Scanner sc=new Scanner(System.in);
@@ -29,17 +29,19 @@ public class CRSApplication {
 		
 		switch(op)
 		{
-		case 1:
+		
 				//goto student service
 			
-			break;
-		case 2:
-			//goto admin service
+		
+		case 1:
+			//goto student registration form
 			new StudentService().register();
 			
 			break;
-		case 3:
+		case 2:
 			//goto professor service
+			break;
+		case 3:
 			break;
 		case 4:
 			break;

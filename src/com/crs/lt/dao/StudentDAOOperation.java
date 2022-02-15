@@ -22,12 +22,14 @@ public class StudentDAOOperation implements StudentDAOInterface{
 		user.setPassword(student.getPassword());
 		user.setRole(student.getRole());
 		user.setApproved(false);
+		
+	
 		boolean flag=new UserDAOOperation().addUserAccount(user);
 		if(flag){
 			
 			try{
 				Class.forName(DBCRSConstants.JDBC_DRIVER);
-				conn=DriverManager.getConnection(DBCRSConstants.DB_URL);
+				conn=DriverManager.getConnection(DBCRSConstants.DB_URL,DBCRSConstants.USER,DBCRSConstants.PASS);
 				String sql = "insert into tbl_student values(?,?,?,?)";
 				stmt = conn.prepareStatement(sql);
 				stmt.setString(2, student.getBranch());

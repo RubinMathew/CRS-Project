@@ -24,7 +24,7 @@ public class UserDAOOperation implements UserDAOInterface {
 		try{
 		
 			Class.forName(DBCRSConstants.JDBC_DRIVER);
-			conn=DriverManager.getConnection(DBCRSConstants.DB_URL);
+			conn=DriverManager.getConnection(DBCRSConstants.DB_URL,DBCRSConstants.USER,DBCRSConstants.PASS);
 			String sql = "insert into tbl_user values(?,?,?,?,?)";
 			stmt = conn.prepareStatement(sql);
 			stmt.setString(1, user.getEmailid());
@@ -32,6 +32,7 @@ public class UserDAOOperation implements UserDAOInterface {
 			stmt.setString(3, user.getPassword());
 			stmt.setInt(4, user.getRole());
 			stmt.setBoolean(5, user.isApproved());
+		
 			int j=stmt.executeUpdate();
 			if(j<=0)
 			{
