@@ -20,6 +20,7 @@ public class CRSStudentApplication {
 		// TODO Auto-generated method stub
 		// student menu will be designed here using do while loop
 		System.out.println("CRS Student Application ");
+		System.out.println("Logged in as : Student");
 		StudentService ss= new StudentService(); 
 		Scanner sc=new Scanner(System.in);
 		System.out.println("1. View Courses");

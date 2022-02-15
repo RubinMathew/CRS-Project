@@ -11,14 +11,19 @@ public class CRSApplication {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//menus needs to be specified over here
-		System.out.println("Welcome to Crs Application");
+		int op=0;
+		do{
+		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++");
+		System.out.println("\nWelcome to CRS Application");
 		System.out.println("1.CRS-Student-Application");
-		System.out.println("2.CRS-Admin-Application");
-		System.out.println("3.CRS-Professor-Application");
+		System.out.println("2.Register Student");
+		System.out.println("3.Log in");
 		System.out.println("4.Exit");
+		System.out.println("Enter your option:- ");
 		Scanner sc=new Scanner(System.in);
-		int op=sc.nextInt();
+		op=sc.nextInt();
 		/* goto CRSAdmin,CRSStudent,CRSProfessor Menu from here */
+		
 		
 		switch(op)
 		{
@@ -38,6 +43,7 @@ public class CRSApplication {
 			System.out.println("You have entered wrong option");
 			sc.next();
 		}
+	} while(op!=4);
 	}
 
 }
