@@ -28,13 +28,14 @@ public class StudentDAOOperation implements StudentDAOInterface{
 		if(flag){
 			
 			try{
+				
 				Class.forName(DBCRSConstants.JDBC_DRIVER);
 				conn=DriverManager.getConnection(DBCRSConstants.DB_URL,DBCRSConstants.USER,DBCRSConstants.PASS);
-				String sql = "insert into tbl_student values(?,?,?,?)";
+				String sql = "insert into tbl_student(branch,batch,emailid) values(?,?,?)";
 				stmt = conn.prepareStatement(sql);
-				stmt.setString(2, student.getBranch());
-				stmt.setInt(3, student.getBatch());
-				stmt.setString(4, user.getEmailid());
+				stmt.setString(1, student.getBranch());
+				stmt.setInt(2, student.getBatch());
+				stmt.setString(3, user.getEmailid());
 				int j=stmt.executeUpdate();
 				stmt.close();
 				conn.close();
@@ -48,6 +49,7 @@ public class StudentDAOOperation implements StudentDAOInterface{
 			}
 			catch (Exception e) {
 				// TODO: handle exception
+				System.out.println(e);
 				try{
 					stmt.close();
 					conn.close();

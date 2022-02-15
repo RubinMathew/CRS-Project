@@ -32,40 +32,40 @@ public class UserDAOOperation implements UserDAOInterface {
 			stmt.setString(3, user.getPassword());
 			stmt.setInt(4, user.getRole());
 			stmt.setBoolean(5, user.isApproved());
-		
+
 			int j=stmt.executeUpdate();
+	    	stmt.close();
+			conn.close();
+		    if(j>0){
+
+		    
+		    	
+		    	return true;
+				
+			}
 			if(j<=0)
 			{
-				stmt.close();
-				conn.close();
+	
 				return false;
 				
 			}
-			stmt.close();
-			conn.close();
-			
+		
 		}catch (Exception e) {
 			// TODO: handle exception
+	    	try {
+				stmt.close();
+				conn.close();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		
 			return false;
 		}
-		finally{
-			try {
-				if(stmt!=null)
-					stmt.close();
-			} catch (SQLException e2) {
-				// TODO: handle exception
-				return false;
-			}
-			try {
-				if(conn!=null)
-					stmt.close();
-			} catch (SQLException se2) {
-				// TODO: handle exception
-				return false;
-			}
-		}
+		return false;
+	
 		
-		return true;
+		
 	}
 
 }
