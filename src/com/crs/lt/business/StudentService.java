@@ -13,7 +13,7 @@ import com.crs.lt.beans.GradeCard;
 import com.crs.lt.beans.RegisteredCourse;
 import com.crs.lt.beans.SemesterRegistration;
 import com.crs.lt.beans.Student;
-import com.crs.lt.beans.User;
+
 import com.crs.lt.dao.StudentDAOOperation;
 
 /**
@@ -24,7 +24,7 @@ public class StudentService implements StudentServiceInterface {
 	static int counter = 0;
 
 	private List<Student> studentList = new ArrayList<Student>();
-	private List<SemesterRegistration> semList = new ArrayList<SemesterRegistration>();
+	//private List<SemesterRegistration> semList = new ArrayList<SemesterRegistration>();
 	private List<GradeCard> gradeCardList=new ArrayList<GradeCard>();
 	private List<RegisteredCourse> registeredCourseList=new ArrayList<RegisteredCourse>();
 	private List<Course> courseList=new ArrayList<Course>();
@@ -33,18 +33,7 @@ public class StudentService implements StudentServiceInterface {
 
 
 	public void register() {
-		// TODO Auto-generated method stub
-	/*	Student student = new Student();
-		
-		student.setName("AAA");
-		student.setStudentId(counter + 100);
-		counter++;
-		student.setBatch(counter);
-		student.setBranch("Science");
-		student.setRole("Student");
-		student.setUserId(1000 + counter);
-		student.setPassword("password");
-		studentList.add(student);*/
+	
 		Student student=new Student();
 		
 		System.out.println("Enter the email id :- ");
@@ -58,13 +47,13 @@ public class StudentService implements StudentServiceInterface {
 		student.setPassword(sc.next());
 		System.out.println("Enter student name :- ");
 		student.setName(sc.next());
-		student.setRole("student"); /*default role for student */
+		student.setRole(1); /*default role for student */
 		System.out.println("Enter the branch (EE/CS/EEE/MECH/CYBERSEC) :- ");
 		student.setBranch(sc.next());
 		System.out.println("Enter the semester/batch number :- ");
 		student.setBatch(sc.nextInt());
 		student.setApproved(false); /*need admins approvals */
-		new StudentDAOOperation().registerStudent(student);
+		System.out.println(new StudentDAOOperation().registerStudent(student));
 		
 	
 		

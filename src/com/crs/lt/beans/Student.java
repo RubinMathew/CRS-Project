@@ -5,14 +5,6 @@ public class Student extends User {
 private int studentId;
 private String branch;
 private int batch;
-private boolean isApproved=false;
-
-public boolean isApproved() {
-	return isApproved;
-}
-public void setApproved(boolean isApproved) {
-	this.isApproved = isApproved;
-}
 public int getStudentId() {
 	return studentId;
 }

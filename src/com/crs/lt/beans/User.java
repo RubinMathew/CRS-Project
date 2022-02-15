@@ -11,7 +11,7 @@ public class User {
 
 	private String emailid; // consider email id as user id
 	private String name;
-	private String role;
+	private int role;
 	private String password;
 	private boolean isApproved = false;
 
@@ -47,11 +47,11 @@ public class User {
 		this.name = name;
 	}
 
-	public String getRole() {
+	public int getRole() {
 		return role;
 	}
 
-	public void setRole(String role) {
+	public void setRole(int role) {
 		this.role = role;
 	}
 

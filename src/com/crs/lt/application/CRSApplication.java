@@ -2,6 +2,8 @@ package com.crs.lt.application;
 
 import java.util.Scanner;
 
+import com.crs.lt.business.StudentService;
+
 
 public class CRSApplication {
 
@@ -33,6 +35,8 @@ public class CRSApplication {
 			break;
 		case 2:
 			//goto admin service
+			new StudentService().register();
+			
 			break;
 		case 3:
 			//goto professor service

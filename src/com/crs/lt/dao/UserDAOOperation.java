@@ -6,6 +6,7 @@ package com.crs.lt.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import com.crs.lt.beans.User;
 import com.crs.lt.constant.DBCRSConstants;
@@ -29,13 +30,41 @@ public class UserDAOOperation implements UserDAOInterface {
 			stmt.setString(1, user.getEmailid());
 			stmt.setString(2, user.getName());
 			stmt.setString(3, user.getPassword());
-			stmt.setString(4, user.getRole());
+			stmt.setInt(4, user.getRole());
+			stmt.setBoolean(5, user.isApproved());
+			int j=stmt.executeUpdate();
+			if(j<=0)
+			{
+				stmt.close();
+				conn.close();
+				return false;
+				
+			}
+			stmt.close();
+			conn.close();
 			
 		}catch (Exception e) {
 			// TODO: handle exception
+			return false;
+		}
+		finally{
+			try {
+				if(stmt!=null)
+					stmt.close();
+			} catch (SQLException e2) {
+				// TODO: handle exception
+				return false;
+			}
+			try {
+				if(conn!=null)
+					stmt.close();
+			} catch (SQLException se2) {
+				// TODO: handle exception
+				return false;
+			}
 		}
 		
-		return false;
+		return true;
 	}
 
 }
