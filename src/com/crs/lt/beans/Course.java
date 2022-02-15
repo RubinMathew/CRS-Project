@@ -12,7 +12,7 @@ public class Course {
 	
 	private String courseName;
 	private boolean isOffered;
-	private String instructor;
+	private int instructor; // foriegn key refeerence to professor table
 	private String courseCode;
 	
 public String getCourseCode() {
@@ -33,10 +33,10 @@ public boolean isOffered() {
 public void setOffered(boolean isOffered) {
 	this.isOffered = isOffered;
 }
-public String getInstructor() {
+public int getInstructor() {
 	return instructor;
 }
-public void setInstructor(String instructor) {
+public void setInstructor(int instructor) {
 	this.instructor = instructor;
 }
 

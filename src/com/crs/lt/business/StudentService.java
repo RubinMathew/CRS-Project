@@ -6,11 +6,15 @@ package com.crs.lt.business;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
+
 import com.crs.lt.beans.Course;
 import com.crs.lt.beans.GradeCard;
 import com.crs.lt.beans.RegisteredCourse;
 import com.crs.lt.beans.SemesterRegistration;
 import com.crs.lt.beans.Student;
+import com.crs.lt.beans.User;
+import com.crs.lt.dao.StudentDAOOperation;
 
 /**
  * @author user214
@@ -24,12 +28,13 @@ public class StudentService implements StudentServiceInterface {
 	private List<GradeCard> gradeCardList=new ArrayList<GradeCard>();
 	private List<RegisteredCourse> registeredCourseList=new ArrayList<RegisteredCourse>();
 	private List<Course> courseList=new ArrayList<Course>();
+	private Scanner sc=new Scanner(System.in);
 
 
 
 	public void register() {
 		// TODO Auto-generated method stub
-		Student student = new Student();
+	/*	Student student = new Student();
 		
 		student.setName("AAA");
 		student.setStudentId(counter + 100);
@@ -39,8 +44,32 @@ public class StudentService implements StudentServiceInterface {
 		student.setRole("Student");
 		student.setUserId(1000 + counter);
 		student.setPassword("password");
-		studentList.add(student);
+		studentList.add(student);*/
+		Student student=new Student();
+		
+		System.out.println("Enter the email id :- ");
+	
+		
+		
+		/*student id will be auto increment */ 
+		student.setEmailid(sc.next());
+	
+		System.out.println("Enter a password :- ");
+		student.setPassword(sc.next());
+		System.out.println("Enter student name :- ");
+		student.setName(sc.next());
+		student.setRole("student"); /*default role for student */
+		System.out.println("Enter the branch (EE/CS/EEE/MECH/CYBERSEC) :- ");
+		student.setBranch(sc.next());
+		System.out.println("Enter the semester/batch number :- ");
+		student.setBatch(sc.nextInt());
+		student.setApproved(false); /*need admins approvals */
+		new StudentDAOOperation().registerStudent(student);
+		
+	
+		
 
+		
 	}
 
 	public void viewCard() {

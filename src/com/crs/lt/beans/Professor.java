@@ -7,6 +7,7 @@ public class Professor extends User {
 private String department;
 private String designtion;
 private Date dateofJoinig;
+/* email id and professors ids are also available in the database  table */
 
 public String getDepartment() {
 	return department;
