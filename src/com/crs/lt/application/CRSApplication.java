@@ -39,7 +39,12 @@ public class CRSApplication {
 			
 			break;
 		case 2:
-			//goto professor service
+			//do login work here 
+			System.out.println("Enter the user name :- \n");
+			String username=sc.next().trim();
+			System.out.println("Enter the password :- \n");
+			String password=sc.next().trim();
+			
 			break;
 		case 3:
 			break;
