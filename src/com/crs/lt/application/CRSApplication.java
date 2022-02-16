@@ -3,6 +3,7 @@ package com.crs.lt.application;
 import java.util.Scanner;
 
 import com.crs.lt.business.StudentService;
+import com.crs.lt.business.UserService;
 
 
 public class CRSApplication {
@@ -44,6 +45,26 @@ public class CRSApplication {
 			String username=sc.next().trim();
 			System.out.println("Enter the password :- \n");
 			String password=sc.next().trim();
+			System.out.println(username+";"+password);
+			sc.next();
+			int userloginoption=new UserService().login(username, password);
+			switch(userloginoption){
+			case 1:
+				System.out.println("You will be redirected to admin home page (press any character to continue then enter key )\n");
+				sc.next();
+				break;
+			case 2:
+				System.out.println("You will be redirected to professor home page (press any character to continue then enter key )\n");
+				sc.next();
+				break;
+			case 3:
+				System.out.println("You will be redirected to student home page (press any character to continue then enter key )\n");
+				sc.next();
+				CRSStudentApplication.main(null);
+				break;
+			}
+			
+			
 			
 			break;
 		case 3:

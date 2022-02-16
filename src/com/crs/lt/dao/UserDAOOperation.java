@@ -65,46 +65,44 @@ public class UserDAOOperation implements UserDAOInterface {
 
 	}
 
-	public int loginProcess(String username, String password){
+	public int loginProcess(String username, String password) {
 		Connection conn = null;
 		PreparedStatement stmt = null;
-		
-		try{
+		int roleId = 0;
+		try {
 			Class.forName(DBCRSConstants.JDBC_DRIVER);
-			conn = DriverManager.getConnection(DBCRSConstants.DB_URL,DBCRSConstants.USER, DBCRSConstants.PASS);
-			String sql="SELECT * FROM tbl_user where emailid=? and password=? and isApproved=1";
-			stmt=conn.prepareStatement(sql);
-			stmt.setString(1, username.trim());
-			stmt.setString(2, password.trim());
-			ResultSet rs = stmt.executeQuery(sql); 
-			int loginapprovecounter=0;
-			while(rs.next()){
-				loginapprovecounter++;
+			conn = DriverManager.getConnection(DBCRSConstants.DB_URL,
+					DBCRSConstants.USER, DBCRSConstants.PASS);
+			String sql = "SELECT * FROM tbl_user WHERE emailid=? AND password=? AND isapproved=1";
+			//SELECT * FROM tbl_user WHERE emailid='r@g.c' AND password='r'  AND isapproved=1
+			 // "SELECT * FROM tbl_user WHERE emailid=? AND password=? AND isapproved=1"
+			stmt = conn.prepareStatement(sql);
+			stmt.setString(1, username);
+			stmt.setString(2, password);
+			
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+
+				roleId = rs.getInt("role");
 			}
 			stmt.close();
 			conn.close();
-			if(loginapprovecounter>0){
-				return 1;
-				
-			}
-			else{
-				return 0;
-			}
-					
-		}catch (Exception e) {
+			return roleId;
+
+		} catch (Exception e) {
 			// TODO: handle exception
-			
+
 			try {
 				stmt.close();
 				conn.close();
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
-				return 0;
+				return roleId;
 			}
-		
+
 		}
-		
-		return 0;
+
+		return roleId;
 	}
 }
