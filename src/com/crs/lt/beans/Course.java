@@ -12,8 +12,24 @@ public class Course {
 	
 	private String courseName;
 	private boolean isOffered;
-	private int instructor; // foriegn key refeerence to professor table
+	private int instructor; // foriegn key reference to professor table
 	private String courseCode;
+	private int courseId;
+	private int availbleSeats;
+	public int getCourseId() {
+		return courseId;
+	}
+	public void setCourseId(int courseId) {
+		this.courseId = courseId;
+	}
+	public int getAvailbleSeats() {
+		return availbleSeats;
+	}
+	public void setAvailbleSeats(int availbleSeats) {
+		this.availbleSeats = availbleSeats;
+	}
+
+	
 	
 public String getCourseCode() {
 	return courseCode;

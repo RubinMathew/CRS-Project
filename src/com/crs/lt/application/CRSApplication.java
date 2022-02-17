@@ -20,7 +20,7 @@ public class CRSApplication {
 		System.out.println("\nWelcome to CRS Application");
 		System.out.println("1.Register Student");
 		System.out.println("2.Log in");
-		System.out.println("3.View Courses");
+		System.out.println("3.Update Password");
 		System.out.println("4.Exit");
 		System.out.println("Enter your option:- ");
 		Scanner sc=new Scanner(System.in);
@@ -31,7 +31,7 @@ public class CRSApplication {
 		switch(op)
 		{
 		
-				//goto student service
+				
 			
 		
 		case 1:

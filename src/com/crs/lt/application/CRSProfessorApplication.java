@@ -8,5 +8,5 @@ package com.crs.lt.application;
  *
  */
 public class CRSProfessorApplication {
-
+// professor home page
 }

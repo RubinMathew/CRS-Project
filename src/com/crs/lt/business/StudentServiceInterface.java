@@ -13,6 +13,7 @@ public interface StudentServiceInterface {
 	public void viewRegisteredCourses(int studentId); //completed
 	public void viewGradeCard(int studentId,int semesterId); //completed
 	public void payment();
+	public void listAllAvailableCourses();
 	
 
 	

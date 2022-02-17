@@ -14,6 +14,7 @@ import com.crs.lt.beans.RegisteredCourse;
 import com.crs.lt.beans.SemesterRegistration;
 import com.crs.lt.beans.Student;
 
+import com.crs.lt.dao.CourseDAOOperation;
 import com.crs.lt.dao.StudentDAOOperation;
 
 /**
@@ -47,7 +48,7 @@ public class StudentService implements StudentServiceInterface {
 		student.setPassword(sc.next());
 		System.out.println("Enter student name :- \n");
 		student.setName(sc.next());
-		student.setRole(1); /*default role for student */
+		student.setRole(3); /*default role for student */
 		System.out.println("Enter the branch (EE/CS/EEE/MECH/CYBERSEC) :- \n");
 		student.setBranch(sc.next());
 		System.out.println("Enter the semester/batch number :- \n");
@@ -122,12 +123,20 @@ public class StudentService implements StudentServiceInterface {
 	}
 
 	public void viewCourses() {
+		List<Course> courseList=new CourseDAOOperation().getAvailableCourses();
+		if(!courseList.isEmpty()){
 		for(Course co:courseList){
+			System.out.println("-------------------------------------------------");
+			System.out.println("Course Id : "+co.getCourseId());
 			System.out.println("Course Code : "+co.getCourseCode());
 			System.out.println("Course Name : "+co.getCourseName());
-			System.out.println("Instrucotr Name : "+co.getInstructor());
+			System.out.println("Instructr Id : "+co.getInstructor());
+			System.out.println("Available Seats : "+co.getAvailbleSeats());
+			System.out.println("Offered : "+co.isOffered());
 			System.out.println("-------------------------------------------------");
 		}
+		}
+		return;
 		// TODO Auto-generated method stub
 
 	}
@@ -156,6 +165,12 @@ public class StudentService implements StudentServiceInterface {
 		
 		// TODO Auto-generated method stub
 
+	}
+	public void listAllAvailableCourses(){
+		
+		List<Course> courseList=new CourseDAOOperation().getAvailableCourses();
+		
+		
 	}
 
 	public void viewGradeCard(int studentId, int semesterId) {
@@ -189,6 +204,7 @@ public class StudentService implements StudentServiceInterface {
 		
 
 	}
+	
 	
 
 

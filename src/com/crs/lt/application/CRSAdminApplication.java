@@ -8,5 +8,6 @@ package com.crs.lt.application;
  *
  */
 public class CRSAdminApplication {
+	// admin home page
 
 }
