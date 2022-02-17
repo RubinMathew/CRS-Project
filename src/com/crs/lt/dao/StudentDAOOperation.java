@@ -1,9 +1,9 @@
 package com.crs.lt.dao;
 
 import java.sql.Connection;
+import com.crs.lt.constant.SQLQueryConstants;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-
 import com.crs.lt.beans.Student;
 import com.crs.lt.beans.User;
 import com.crs.lt.constant.DBCRSConstants;
@@ -30,9 +30,8 @@ public class StudentDAOOperation implements StudentDAOInterface{
 			try{
 				
 				Class.forName(DBCRSConstants.JDBC_DRIVER);
-				conn=DriverManager.getConnection(DBCRSConstants.DB_URL,DBCRSConstants.USER,DBCRSConstants.PASS);
-				String sql = "insert into tbl_student(branch,batch,emailid) values(?,?,?)";
-				stmt = conn.prepareStatement(sql);
+				conn=DriverManager.getConnection(DBCRSConstants.DB_URL,DBCRSConstants.USER,DBCRSConstants.PASS);	
+				stmt = conn.prepareStatement(SQLQueryConstants.ADD_STUDENT_DETAILS);
 				stmt.setString(1, student.getBranch());
 				stmt.setInt(2, student.getBatch());
 				stmt.setString(3, user.getEmailid());

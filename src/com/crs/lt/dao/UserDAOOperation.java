@@ -11,6 +11,7 @@ import java.sql.SQLException;
 
 import com.crs.lt.beans.User;
 import com.crs.lt.constant.DBCRSConstants;
+import com.crs.lt.constant.SQLQueryConstants;
 
 /**
  * @author user214
@@ -27,8 +28,8 @@ public class UserDAOOperation implements UserDAOInterface {
 			Class.forName(DBCRSConstants.JDBC_DRIVER);
 			conn = DriverManager.getConnection(DBCRSConstants.DB_URL,
 					DBCRSConstants.USER, DBCRSConstants.PASS);
-			String sql = "insert into tbl_user values(?,?,?,?,?)";
-			stmt = conn.prepareStatement(sql);
+			
+			stmt = conn.prepareStatement(SQLQueryConstants.CREATE_USER_ACCOUNT);
 			stmt.setString(1, user.getEmailid());
 			stmt.setString(2, user.getName());
 			stmt.setString(3, user.getPassword());
