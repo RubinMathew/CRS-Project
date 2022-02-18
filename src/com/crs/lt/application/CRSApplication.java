@@ -30,10 +30,7 @@ public class CRSApplication {
 		
 		switch(op)
 		{
-		
-				
-			
-		
+
 		case 1:
 			//goto student registration form
 			new StudentService().register();
@@ -41,7 +38,7 @@ public class CRSApplication {
 			break;
 		case 2:
 			//do login work here 
-			System.out.println("Enter the user name :- \n");
+			System.out.println("Enter the user name(Emaild ID) :- \n");
 			String username=sc.next().trim();
 			System.out.println("Enter the password :- \n");
 			String password=sc.next().trim();
@@ -60,7 +57,7 @@ public class CRSApplication {
 			case 3:
 				System.out.println("You will be redirected to student home page (press any character to continue then enter key )\n");
 				sc.next();
-				CRSStudentApplication.main(null);
+				CRSStudentApplication.showStudentHome(username);
 				break;
 			}
 			

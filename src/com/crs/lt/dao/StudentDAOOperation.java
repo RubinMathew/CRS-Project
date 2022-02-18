@@ -1,8 +1,12 @@
 package com.crs.lt.dao;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import org.apache.log4j.Logger;
 
 import com.crs.lt.beans.Student;
 import com.crs.lt.beans.User;
@@ -23,6 +27,7 @@ public class StudentDAOOperation implements StudentDAOInterface{
 		user.setPassword(student.getPassword());
 		user.setRole(student.getRole());
 		user.setApproved(false);
+		
 		
 	
 		boolean flag=new UserDAOOperation().addUserAccount(user);
@@ -68,6 +73,37 @@ public class StudentDAOOperation implements StudentDAOInterface{
 		return false;
 		
 		
+	}
+
+	@Override
+	public int findStudentId(String emailId) {
+
+		Connection conn=null;
+		PreparedStatement stmt=null;
+		int studentid=0;
+		
+		try{
+			Class.forName(DBCRSConstants.JDBC_DRIVER);
+			conn=DriverManager.getConnection(DBCRSConstants.DB_URL,DBCRSConstants.USER,DBCRSConstants.PASS);	
+			stmt = conn.prepareStatement(SQLQueryConstants.GET_STUDENT_ID);
+			stmt.setString(1, emailId);
+			ResultSet rs=stmt.executeQuery();
+			
+			
+			
+			while(rs.next()){
+				studentid=rs.getInt("studentid");
+			}
+			stmt.close();
+			conn.close();
+			return studentid;
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+		return studentid;
+
 	}
 	
 }

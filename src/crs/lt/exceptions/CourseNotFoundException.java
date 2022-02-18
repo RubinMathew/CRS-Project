@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package crs.lt.exceptions;
 
 /**
@@ -8,7 +6,7 @@ package crs.lt.exceptions;
  *
  */
 public class CourseNotFoundException extends Exception{
- public CourseNotFoundException(String s){
+public CourseNotFoundException(String s){
 	 super(s);
  }	
 }
