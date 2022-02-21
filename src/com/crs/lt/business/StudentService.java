@@ -7,17 +7,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
-
 import com.crs.lt.beans.Course;
 import com.crs.lt.beans.GradeCard;
 import com.crs.lt.beans.RegisteredCourse;
 import com.crs.lt.beans.SemesterRegistration;
 import com.crs.lt.beans.Student;
-
 import com.crs.lt.dao.CourseDAOOperation;
-
 import com.crs.lt.dao.StudentDAOOperation;
-
 import crs.lt.exceptions.CourseNotFoundException;
 
 /**
@@ -85,10 +81,13 @@ public class StudentService implements StudentServiceInterface {
 
 	}
 
-	public void addCourse(String courseCode, int studentID) {
+	public boolean addCourse( int studentId) {
 		// TODO Auto-generated method stub
 		//RegisteredCourse registeredcourse = new RegisteredCourse();
-
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter the Course ID : - \n ");
+		int courseId=sc.nextInt();
+		return new StudentDAOOperation().registerCourse(studentId, courseId);
 
 	}
 
@@ -128,6 +127,7 @@ public class StudentService implements StudentServiceInterface {
 				System.out
 						.println("-------------------------------------------------");
 			}
+			
 		}
 		else
 		{

@@ -6,6 +6,7 @@ public interface StudentDAOInterface {
 	//this method is for registering the student on tbl_student 
 	public boolean registerStudent(Student student);
 	public int findStudentId(String emailId);
+	public boolean registerCourse(int studentId,int courseId);
 	
 
 		

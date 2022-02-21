@@ -6,4 +6,5 @@ public interface UserDAOInterface {
 
 	public boolean addUserAccount(User user);
 	public int loginProcess(String username, String password);
+
 }

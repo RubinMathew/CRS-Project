@@ -1,7 +1,6 @@
 package com.crs.lt.application;
 
 import java.util.Scanner;
-
 import com.crs.lt.business.StudentService;
 import com.crs.lt.business.UserService;
 
@@ -15,15 +14,16 @@ public class CRSApplication {
 		// TODO Auto-generated method stub
 		//menus needs to be specified over here
 		int op=0;
+		Scanner sc=new Scanner(System.in);
 		do{
-		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++");
+		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++\n");
 		System.out.println("\nWelcome to CRS Application");
 		System.out.println("1.Register Student");
 		System.out.println("2.Log in");
 		System.out.println("3.Update Password");
 		System.out.println("4.Exit");
 		System.out.println("Enter your option:- ");
-		Scanner sc=new Scanner(System.in);
+		
 		op=sc.nextInt();
 		/* goto CRSAdmin,CRSStudent,CRSProfessor Menu from here */
 		
@@ -49,10 +49,12 @@ public class CRSApplication {
 			case 1:
 				System.out.println("You will be redirected to admin home page (press any character to continue then enter key )\n");
 				sc.next();
+				CRSAdminApplication.showAdminHome(username);
 				break;
 			case 2:
 				System.out.println("You will be redirected to professor home page (press any character to continue then enter key )\n");
 				sc.next();
+				CRSProfessorApplication.showProfessorHome(username);
 				break;
 			case 3:
 				System.out.println("You will be redirected to student home page (press any character to continue then enter key )\n");
@@ -73,6 +75,8 @@ public class CRSApplication {
 			sc.next();
 		}
 	} while(op!=4);
+		sc.close();
+		
 	}
 
 }

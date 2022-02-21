@@ -9,5 +9,8 @@ package com.crs.lt.application;
  */
 public class CRSAdminApplication {
 	// admin home page
+public static void showAdminHome(String username) {
+	
+}
 
 }

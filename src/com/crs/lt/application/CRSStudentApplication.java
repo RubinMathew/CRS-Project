@@ -49,10 +49,11 @@ public class CRSStudentApplication {
 			}
 			break;
 		case 2:
-			ss.addCourse("course1", 100);
+			
+			ss.addCourse(studentid);
 			break;
 		case 3:
-			ss.viewRegisteredCourses(100);
+			ss.viewRegisteredCourses(studentid);
 			break;
 		default:
 			break;

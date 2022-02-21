@@ -105,5 +105,27 @@ public class StudentDAOOperation implements StudentDAOInterface{
 		return studentid;
 
 	}
+
+	@Override
+	public boolean registerCourse(int studentId, int courseId) {
+		Connection conn=null;
+		PreparedStatement stmt=null;
+		
+		try{
+			Class.forName(DBCRSConstants.JDBC_DRIVER);
+			conn=DriverManager.getConnection(DBCRSConstants.DB_URL,DBCRSConstants.USER,DBCRSConstants.PASS);	
+			stmt = conn.prepareStatement(SQLQueryConstants.REGISTER_FOR_A_COURSE);
+	
+			
+			stmt.setInt(1, studentId);
+			stmt.setInt(2, courseId);
+			int counter=stmt.executeUpdate();
+			
+		}catch(Exception e){
+			
+		}
+		
+		return false;
+	}
 	
 }

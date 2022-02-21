@@ -9,7 +9,7 @@ public interface StudentServiceInterface {
 	public void viewCard();
 	/* implementation will be followed */
 	public void registerCourse(int studentId); // completed
-	public void addCourse(String courseCode,int studentID); // completed
+	public boolean addCourse(int studentID); // completed
 	public void dropcourse(int studentid,String courseCode,int semesterID); //completed
 	public void viewCourses()throws CourseNotFoundException; // completed
 	public void viewRegisteredCourses(int studentId); //completed

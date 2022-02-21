@@ -13,6 +13,7 @@ import com.crs.lt.constant.SQLQueryConstants;
 
 public class CourseDAOOperation implements CourseDAOInterface{
 
+	@Override
 	public List<Course> getAvailableCourses(){
 		Connection conn=null;
 		PreparedStatement stmt=null;
@@ -50,4 +51,13 @@ public class CourseDAOOperation implements CourseDAOInterface{
 		
 		return courseList;
 	}
+
+	@Override
+	public boolean courseAvailable(int courseId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
+	
 }
