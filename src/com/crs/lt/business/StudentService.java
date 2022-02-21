@@ -33,20 +33,20 @@ public class StudentService implements StudentServiceInterface {
 	public void register() {
 
 		Student student = new Student();
-		System.out.println("Enter the email id :- \n");
+		logger.info("Enter the email id :- \n");
 		/* student id will be auto increment */
 		student.setEmailid(sc.next());
-		System.out.println("Enter a password :- \n");
+		logger.info("Enter a password :- \n");
 		student.setPassword(sc.next());
-		System.out.println("Enter student name :- \n");
+		logger.info("Enter student name :- \n");
 		student.setName(sc.next());
 		student.setRole(3); /* default role for student */
-		System.out.println("Enter the branch (EE/CS/EEE/MECH/CYBERSEC) :- \n");
+		logger.info("Enter the branch (EE/CS/EEE/MECH/CYBERSEC) :- \n");
 		student.setBranch(sc.next());
-		System.out.println("Enter the semester/batch number :- \n");
+		logger.info("Enter the semester/batch number :- \n");
 		student.setBatch(sc.nextInt());
 		student.setApproved(false); /* need admins approvals */
-		System.out.println(new StudentDAOOperation().registerStudent(student));
+		logger.info(new StudentDAOOperation().registerStudent(student));
 		sc.next();
 
 	}
@@ -86,7 +86,7 @@ public class StudentService implements StudentServiceInterface {
 		// TODO Auto-generated method stub
 		//RegisteredCourse registeredcourse = new RegisteredCourse();
 		Scanner sc= new Scanner(System.in);
-		System.out.println("Enter the Course ID : - \n ");
+		logger.info("Enter the Course ID : - \n ");
 		int courseId=sc.nextInt();
 		return new StudentDAOOperation().registerCourse(studentId, courseId);
 
@@ -118,13 +118,13 @@ public class StudentService implements StudentServiceInterface {
 			for (Course co : courseList) {
 				System.out
 						.println("-------------------------------------------------");
-				System.out.println("Course Id : " + co.getCourseId());
-				System.out.println("Course Code : " + co.getCourseCode());
-				System.out.println("Course Name : " + co.getCourseName());
-				System.out.println("Instructr Id : " + co.getInstructor());
+				logger.info("Course Id : " + co.getCourseId());
+				logger.info("Course Code : " + co.getCourseCode());
+				logger.info("Course Name : " + co.getCourseName());
+				logger.info("Instructr Id : " + co.getInstructor());
 				System.out
 						.println("Available Seats : " + co.getAvailbleSeats());
-				System.out.println("Offered : " + co.isOffered());
+				logger.info("Offered : " + co.isOffered());
 				System.out
 						.println("-------------------------------------------------");
 			}
@@ -150,11 +150,11 @@ public class StudentService implements StudentServiceInterface {
 
 		for (RegisteredCourse rc : registeredCourseList) {
 			if (rc.getStudentId() == studentId) {
-				System.out.println("Student id :" + rc.getStudentId());
-				System.out.println("Student Name : " + st.getName());
-				System.out.println("Course Code : " + rc.getCourseCode());
-				System.out.println("Semester" + rc.getSemester());
-				System.out.println("Grade" + rc.getGrade());
+				logger.info("Student id :" + rc.getStudentId());
+				logger.info("Student Name : " + st.getName());
+				logger.info("Course Code : " + rc.getCourseCode());
+				logger.info("Semester" + rc.getSemester());
+				logger.info("Grade" + rc.getGrade());
 
 			}
 		}
@@ -177,11 +177,11 @@ public class StudentService implements StudentServiceInterface {
 		for (GradeCard gc : gradeCardList) {
 			if (gc.getStudentId() == studentId && gc.getSemester() == semesterId) {
 
-				System.out.println("StudentId :" + gc.getStudentId());
-				System.out.println("Student Name: " + st.getName());
-				System.out.println("Semester :" + gc.getSemester());
-				System.out.println("CPI : " + gc.getCpi());
-				// System.out.println("Registered Course "+gc.getRegisteredCourses());
+				logger.info("StudentId :" + gc.getStudentId());
+				logger.info("Student Name: " + st.getName());
+				logger.info("Semester :" + gc.getSemester());
+				logger.info("CPI : " + gc.getCpi());
+				// logger.info("Registered Course "+gc.getRegisteredCourses());
 
 			}
 		}

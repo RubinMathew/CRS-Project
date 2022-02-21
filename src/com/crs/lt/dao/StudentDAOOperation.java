@@ -16,19 +16,18 @@ import crs.lt.exceptions.CourseNotFoundException;
 
 public class StudentDAOOperation implements StudentDAOInterface {
 
+	@Override
 	public boolean registerStudent(Student student) {
 		// TODO Auto-generated method stub
 		// add details to user account table tbl_user first
 		Connection conn = null;
 		PreparedStatement stmt = null;
-
 		User user = new User();
 		user.setEmailid(student.getEmailid());
 		user.setName(student.getName());
 		user.setPassword(student.getPassword());
 		user.setRole(student.getRole());
 		user.setApproved(false);
-
 		boolean flag = new UserDAOOperation().addUserAccount(user);
 		if (flag) {
 
@@ -138,30 +137,7 @@ public class StudentDAOOperation implements StudentDAOInterface {
 					
 				}
 			}
-			
-			
-		
-			
-			
-			
-			
-			
-			
-		
-			
-			
-			
-			
-			
-			
-			
-			
-			
-		
-
-			stmt.close();
 			conn.close();
-
 			if (counter > 0) {
 				return true;
 			} else {
