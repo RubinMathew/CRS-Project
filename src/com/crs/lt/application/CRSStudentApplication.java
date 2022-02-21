@@ -33,7 +33,8 @@ public class CRSStudentApplication {
 		int op;
 		Scanner sc=new Scanner(System.in);
 		do {
-		System.out.println("CRS Student Application ");
+			/* student application menu */
+		System.out.println("*** CRS Student Application ***");
 		System.out.println("Logged in as : Student");
 		System.out.println("Logged in date: "+ date+ " "+ month+" " + year);
 		System.out.println("Logged in time: "+hour+ ":"+ minute+":" + second);

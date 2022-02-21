@@ -85,9 +85,12 @@ public class StudentService implements StudentServiceInterface {
 	public boolean addCourse( int studentId) {
 		// TODO Auto-generated method stub
 		//RegisteredCourse registeredcourse = new RegisteredCourse();
+		
 		Scanner sc= new Scanner(System.in);
-		logger.info("Enter the Course ID : - \n ");
+		logger.info("Enter the Course ID : - \n");
+	
 		int courseId=sc.nextInt();
+		sc.close();
 		return new StudentDAOOperation().registerCourse(studentId, courseId);
 
 	}
