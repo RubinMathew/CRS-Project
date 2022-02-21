@@ -15,12 +15,13 @@ import com.crs.lt.beans.Student;
 import com.crs.lt.dao.CourseDAOOperation;
 import com.crs.lt.dao.StudentDAOOperation;
 import crs.lt.exceptions.CourseNotFoundException;
-
+import org.apache.log4j.Logger;
 /**
  * @author user214
  * 
  */
 public class StudentService implements StudentServiceInterface {
+	private static Logger logger = Logger.getLogger(StudentService.class);
 	static int counter = 0;
 
 	private List<Student> studentList = new ArrayList<Student>();
